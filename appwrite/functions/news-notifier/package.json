@@ -1,0 +1,10 @@
+{
+  "name": "news-notifier",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "node-appwrite": "^25.2.0"
+  }
+}

@@ -1,0 +1,32 @@
+PRIVACY POLICY
+
+Effective Date: April 16, 2026
+
+Digivasity ("we," "us," or "our") operates the Digivasity mobile application. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our app.
+
+Information We Collect:
+- Account Information: When you register, we collect your name, email address, and WhatsApp number.
+- Google Sign-In: If you sign in with Google, we receive your name and email address from your Google account.
+- Usage Data: Information about how you interact with the app, including features used and search queries.
+- Device Information: Device type, operating system version, and unique device identifiers.
+
+How We Use Your Information:
+- To provide and maintain the app's services
+- To manage your account and track your subscription
+- To provide customer support
+- To improve and personalize the app experience
+- To process payments through Flutterwave
+
+Payment Processing: Payments are processed securely through Flutterwave. We do not store your payment card details.
+
+Data Storage: Your data is stored securely using Google Firebase.
+
+Third-Party Services: Google Firebase (authentication), Flutterwave (payments), Google Gemini AI (AI features), Google AdMob (advertising).
+
+Advertising: The app displays ads served by Google AdMob.
+
+Childrens Privacy: Our app is not intended for persons under the age of 18.
+
+Your Rights: You have the right to access, update, or delete your personal data at any time through your account settings.
+
+Contact Us: For questions about this policy, contact us through the app's support channels.

@@ -1,0 +1,95 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ==========================================
+    // Basic Authentication Helpers
+    // ==========================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Checking if the user's email is in the admin whitelist, or if they have the admin role in Firestore
+    function isAdmin() {
+      return isAuthenticated() && (
+        request.auth.token.email in [
+          "ubyytech2023@gmail.com",
+          "olamilekanobetter@gmail.com",
+          "ezekielxap@gmail.com",
+          "info@digiskiskillsconsult.com",
+          "ubong.udoka@digiskillsconsult.com"
+        ] || 
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) && 
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+      );
+    }
+
+    // ==========================================
+    // Validation Helpers
+    // ==========================================
+    
+    // Validates standard user inputs
+    function isValidUser(userId, data) {
+      return data.uid == userId && (
+        !('role' in data) || 
+        data.role == 'user' || 
+        isAdmin()
+      );
+    }
+
+    // Validates news inputs
+    function isValidNews(data) {
+      return data.keys().hasAll(['title', 'content']) &&
+             data.title is string && data.title.size() > 0 &&
+             data.content is string && data.content.size() > 0;
+    }
+
+    // Validates resume inputs
+    function isValidResume(data) {
+      return data.keys().hasAll(['userId', 'title', 'data']) &&
+             data.userId == request.auth.uid;
+    }
+
+    // ==========================================
+    // Collections
+    // ==========================================
+
+    // Resumes Collection
+    match /resumes/{resumeId} {
+      allow read, delete: if isOwner(resource.data.userId) || isAdmin();
+      allow create: if isAuthenticated() && isValidResume(request.resource.data) || isAdmin();
+      allow update: if (isAuthenticated() && isOwner(resource.data.userId) && isValidResume(request.resource.data)) || isAdmin();
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isAuthenticated() && isOwner(userId) && isValidUser(userId, request.resource.data) || isAdmin();
+      allow update: if isAuthenticated() && isOwner(userId) && isValidUser(userId, request.resource.data) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // News Collection
+    match /news/{newsId} {
+      allow read: if true; // Public access to news
+      allow create, update: if isAdmin() && isValidNews(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    // Notifications Collection
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

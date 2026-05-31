@@ -1,0 +1,7 @@
+{
+  "name": "Digivasity",
+  "description": "An AI-driven Overseas Education Advisor helping students find universities, calculate POF, and navigate visa processes.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "984329853365",
+    "project_id": "intense-climber-400415",
+    "storage_bucket": "intense-climber-400415.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984329853365:android:efe6db7e8a3590937fa1fc",
+        "android_client_info": {
+          "package_name": "com.digivasity.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984329853365-mkitr3j8tjhkli4arpbtq8jujesbg4c9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digivasity.app",
+            "certificate_hash": "07b38d664bf5d754c803e022c6134b94e9f988ed"
+          }
+        },
+        {
+          "client_id": "984329853365-k7gomcelu31lu046qjcfgs4skb8n20ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE9Mv9XvpGvKe35GDmd5wV-em9qFBmPEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984329853365-k7gomcelu31lu046qjcfgs4skb8n20ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984329853365:android:564c1a24c6ed65e27fa1fc",
+        "android_client_info": {
+          "package_name": "com.digivasity.pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984329853365-c2v9ke2co9r9b4ihb9cj8k8mo1gp11b3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digivasity.pro",
+            "certificate_hash": "07b38d664bf5d754c803e022c6134b94e9f988ed"
+          }
+        },
+        {
+          "client_id": "984329853365-k7gomcelu31lu046qjcfgs4skb8n20ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE9Mv9XvpGvKe35GDmd5wV-em9qFBmPEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984329853365-k7gomcelu31lu046qjcfgs4skb8n20ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984329853365:android:6ffe8a29faf52fb97fa1fc",
+        "android_client_info": {
+          "package_name": "com.digivasity.pro1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984329853365-k7gomcelu31lu046qjcfgs4skb8n20ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE9Mv9XvpGvKe35GDmd5wV-em9qFBmPEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984329853365-k7gomcelu31lu046qjcfgs4skb8n20ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

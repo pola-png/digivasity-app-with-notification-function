@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+keystore-info/
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# Build output
+dist/
+build/
+coverage/
+logs/
+*.log
+
+# Android generated files
+android/.gradle/
+android/.idea/
+android/build/
+android/app/build/
+android/**/build/
+android/**/.cxx/
+android/**/.transforms/
+android/local.properties
+
+# Capacitor generated web assets
+android/app/src/main/assets/public/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

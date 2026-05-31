@@ -1,0 +1,39 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user is an admin
+    function isAdmin() {
+      return isAuthenticated() &&
+        request.auth.token.email_verified == true &&
+        request.auth.token.email in [
+          "ubyytech2023@gmail.com",
+          "olamilekanobetter@gmail.com",
+          "ezekielxap@gmail.com",
+          "info@digiskiskillsconsult.com",
+          "ubong.udoka@digiskillsconsult.com"
+        ];
+    }
+
+    // Allow public read on news images, but strictly restrict writes to administrators
+    match /news/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // Allow users to upload and manage files in their personal directories
+    match /users/{userId}/{allPaths=**} {
+      allow read, write: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+    }
+
+    // Default deny for all other paths
+    match /{allPaths=**} {
+      allow read, write: if isAdmin();
+    }
+  }
+}
